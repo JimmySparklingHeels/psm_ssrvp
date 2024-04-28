@@ -1,0 +1,54 @@
+/*
+:root {
+  --backcolor: #FFFFFF;
+  --textcolor: #000000;
+}
+
+body {
+  background-color: var(--backcolor);
+  color: var(--textcolor);
+}
+*/
+
+body {
+  font-family: 'Calibri';
+}
+
+.link {
+  color: #4040D0;
+  text-decoration: none;
+}
+
+.themelight {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.themedark {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.countbutton
+{
+  font-size: 20px;
+  border-radius: 2px;
+  outline: none;
+  background-color: #b3b3b3;
+  color: #f0f0f0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  margin-right: 4px;
+  width: 50px;
+}
+
+.counttext
+{
+  font-size: 60px;
+}
+
+.countbox
+{
+  text-align: center;
+  width:200px;
+}

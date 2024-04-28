@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", pageLoaded);          
+            var x = 0;
+            function incr(){
+                x = x + 1;
+                document.getElementById("xvalue").innerText = x;
+                console.log("click +1");
+            }
+			function decr(){
+				x = x - 1;
+                document.getElementById("xvalue").innerText = x;
+                console.log("click -1");
+			}
+            function clearLoginFields(){
+                document.getElementById("loginForm").reset();
+            }
+            function submitLogin(event){
+                event.preventDefault();
+                console.log(event.target);
+                var login = event.target.loginField.value;
+                var pwd = event.target.pwdField.value;
+                if (login == "admin" & pwd == "admin")
+                {
+                    alert("Авторизация успешна");
+                    localStorage.setItem("login", login);
+                    localStorage.setItem("pwd", pwd);
+                }
+                else alert ("Неверный логин или пароль");
+                console.log(login, pwd);
+            }
+            function clearLocalStorage(){
+                localStorage.setItem("login", "");
+                localStorage.setItem("pwd", "");
+            }
+            function pageLoaded(){
+				alert("Страница загружена");
+                document.getElementById("decrButton").addEventListener("click", decr);
+                document.getElementById("clearFields").addEventListener("click", clearLoginFields);
+                document.getElementById("clearLocalStorage").addEventListener("click", clearLocalStorage);
+                document.getElementById("loginForm").addEventListener("submit", (event) => submitLogin(event));
+                var locallogin = localStorage.getItem("login");
+                var localpwd = localStorage.getItem("pwd");
+                if ((locallogin !== null) && (localpwd !== null))
+                {
+                    document.getElementById("loginField").value = locallogin;
+                    document.getElementById("pwdField").value = localpwd;
+                }  
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Письменский Арсений Ратмирович</h1>
+        <p id="xvalue">0</p>
+		<button id="incrButton" onclick="incr()">+1</button>
+        <button id="decrButton">-1</button>
+        <form id="loginForm">
+            <h4>Login</h4>
+            <input type="Text" id="loginField">
+            <h4>Password</h4>
+            <input type="password" id="pwdField">
+            <br>
+            <button id="submitFields" type="submit">Submit</button>
+            <button id="clearFields" type="button">Clear</button>
+            <br>
+            <button id="clearLocalStorage" type="button">Clear Local Storage</button>
+        </form>
+    </body>
+</html>

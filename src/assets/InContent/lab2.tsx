@@ -1,10 +1,9 @@
 //import { useState } from 'react'
 import * as React from 'react'
-import MyButton from './assets/button'
-import Container from './assets/container'
-import Navigation from './assets/navigation'
+import MyButton from '../button'
+import Container from '../container'
 
-function Helloworld() {
+function Lab2() {
   const [count, setCount] = React.useState(0);
   
   function ButtonClick() {
@@ -16,11 +15,10 @@ function Helloworld() {
       <h1>Hello world</h1>
       <Container>
         <MyButton ButtonClick={ButtonClick} count={count}/>
-        <Navigation/>
       </Container>
     </>
 
   );
 }
 
-export default Helloworld
+export default Lab2
