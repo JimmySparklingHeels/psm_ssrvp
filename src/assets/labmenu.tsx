@@ -3,12 +3,15 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import FolderIcon from '@mui/icons-material/Folder';
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './stuff.css'
 
 export default function MyMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
+  const navigate = useNavigate();
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -16,9 +19,10 @@ export default function MyMenu() {
     setAnchorEl(null);
   };
 
+
   return (
     <div>
-    <IconButton edge="start" color="inherit" aria-label="Menu" sx={{ mr: 2 }} onClick={handleClick}>
+    <IconButton edge="start" color="inherit" aria-label="Menu" sx={{ mr: 1 }} onClick={handleClick}>
       <FolderIcon />
     </IconButton>
       <Menu
@@ -30,25 +34,23 @@ export default function MyMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>
-          <Link to="/" className="link">Главная</Link>
+        <MenuItem onClick={() => {navigate('/Lab1'); handleClose();}}>
+          <div className="link">Лабораторная работа 1</div>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/lab1" className="link">Лабораторная работа 1</Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/lab2" className="link">Лабораторная работа 2</Link>
+        <MenuItem onClick={() => {navigate('/Lab2'); handleClose();}}>
+          <div className="link">Лабораторная работа 2</div>
         </MenuItem>
         <MenuItem onClick={handleClose}>Лабораторная работа 3</MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/lab4" className="link">Лабораторная работа 4</Link>
+        <MenuItem onClick={() => {navigate('/Lab4'); handleClose();}}>
+          <div className="link">Лабораторная работа 4</div>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/lab5" className="link">Лабораторная работа 5</Link>
+        <MenuItem onClick={() => {navigate('/Lab5'); handleClose();}}>
+          <div className="link">Лабораторная работа 5</div>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link to="/lab6" className="link">Лабораторная работа 6</Link>
+        <MenuItem onClick={() => {navigate('/Lab6'); handleClose();}}>
+          <div className="link">Лабораторная работа 6</div>
         </MenuItem>
+        <MenuItem onClick={handleClose}>Лабораторная работа 7</MenuItem>
       </Menu>
     </div>
   );
