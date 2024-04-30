@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Helloworld from './helloworld.tsx'
 import { BrowserRouter } from "react-router-dom"
 import Header from './assets/header'
 import Footer from './assets/footer'
@@ -16,7 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider>
       <Header/>
       <Content/>
-      {/*<Helloworld />*/}
       <Footer>
         <hr></hr>
         <p>Письменский А. Р. &copy; <time>2024</time></p>

@@ -1,17 +1,25 @@
 import * as React from 'react'
 import {useForm} from 'react-hook-form'
+import axios from "axios";
 import '../stuff.css'
 
-const Lab5 = () => {
+function Lab5(){
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [isRegistered, setIsRegistered] = React.useState(false);
 
-    const onSubmit = React.useCallback((data) => {
-        console.log(data);
+    const onSubmit = React.useCallback(async (data) => {
+        try {
+            await axios.post("http://localhost:3003/data", data);
+            setIsRegistered(true);
+            reset();
+            alert("Данные успешно отправлены на сервер!");
+        }
+        catch (error) {
+            console.error("Error submitting registration:", error);
+        }
+        //console.log(data);
         // Здесь логика для отправки данных на сервер или их обработки
-
-        setIsRegistered(true);
-        reset();
+        //reset();
     }, [reset]);
 
     const handleReset = React.useCallback(() => {

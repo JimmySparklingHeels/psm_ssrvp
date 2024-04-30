@@ -46,6 +46,9 @@ export default function MyMenu() {
         <MenuItem onClick={handleClose}>
           <Link to="/lab5" className="link">Лабораторная работа 5</Link>
         </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/lab6" className="link">Лабораторная работа 6</Link>
+        </MenuItem>
       </Menu>
     </div>
   );
