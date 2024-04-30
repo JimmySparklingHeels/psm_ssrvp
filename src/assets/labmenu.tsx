@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
@@ -43,6 +42,9 @@ export default function MyMenu() {
         <MenuItem onClick={handleClose}>Лабораторная работа 3</MenuItem>
         <MenuItem onClick={handleClose}>
           <Link to="/lab4" className="link">Лабораторная работа 4</Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link to="/lab5" className="link">Лабораторная работа 5</Link>
         </MenuItem>
       </Menu>
     </div>

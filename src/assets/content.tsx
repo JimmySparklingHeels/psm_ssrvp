@@ -5,6 +5,7 @@ import Homepage from './InContent/homepage'
 import Lab1 from './InContent/lab1'
 import Lab2 from './InContent/lab2'
 import Lab4 from './InContent/lab4'
+import Lab5 from './InContent/lab5'
 import {ThemeContext} from './theme'
 
 function Content() {
@@ -16,6 +17,7 @@ function Content() {
         <Route path="/Lab1" element={<Lab1/>}/>
         <Route path="/Lab2" element={<Lab2/>}/>
         <Route path="/Lab4" element={<Lab4/>}/>
+        <Route path="/Lab5" element={<Lab5/>}/>
       </Routes>
     </div>
     );

@@ -1,5 +1,4 @@
 //import { useState } from 'react'
-import * as React from 'react'
 import store from '../redux/store'
 import { Provider } from 'react-redux'
 import Counter from '../redux/counter'
